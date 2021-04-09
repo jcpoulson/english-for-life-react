@@ -49,7 +49,7 @@ export default function BlogPostsPage(props) {
       </Parallax>
       <div className={classes.main}>
         <div className={classes.container}>
-          <SectionPills changeCurrentCourse={props.changeCurrentCourse}/>
+          <SectionPills changeCurrentCourse={props.changeCurrentCourse} courses={props.courses}/>
         </div>
       </div>
       <Footer

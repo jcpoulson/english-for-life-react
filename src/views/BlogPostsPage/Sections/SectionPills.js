@@ -29,7 +29,7 @@ const useStyles = makeStyles(sectionPillsStyle);
 
 export default function SectionPills(props) {
   const classes = useStyles();
-
+  console.log(props.courses)
   return (
     <div className={classes.section}>
       <GridContainer justify="center">
@@ -38,103 +38,61 @@ export default function SectionPills(props) {
         </GridItem>
       </GridContainer>
       <GridContainer>
-        <GridItem xs={12} sm={6} md={6}>
+
+      {/* Dynamically creating a course component for each course */}
+      {
+        props.courses.map(course => (
+          <GridItem xs={12} sm={6} md={6} key={course[0]}> 
           <Card
             raised
             background
-            style={{ backgroundImage: "url(" + city + ")" }}
+            style={{ backgroundImage: "url(" + (() => {
+        switch (course[1].backgroundImg) {
+          case "city": return city;
+          case "office2": return office2;
+          case "blog8": return blog8;
+          case "office4": return office4;
+        }
+      })() + ")" }}
           >
             <CardBody background>
-              <h6 className={classes.category}>Abigail White</h6>
+              <h6 className={classes.category}>{course[1].teacher}</h6>
               <div>
-                  <img src={abigail} alt="..." className="teacher-img"/>
+              <img src={ (() => {
+        switch (course[1].img) {
+          case "abigail": return abigail;
+          case "jonah": return jonah;
+          case "michael": return michael;
+          case "justin": return justin;
+        }
+      })() } className="teacher-img"></img>
                 </div>
               <a href="#pablo">
                 <h3 className={classes.cardTitle}>
-                  United States Citizenship
+                  {course[1].title}
                 </h3>
               </a>
               <Link to="/course">
-                <Button round href="#pablo" color="danger" onClick={() => {props.changeCurrentCourse(1)}}>
+                <Button round href="#pablo" color={(() => {
+        switch (course[1].img) {
+          case "abigail": return "danger";
+          case "jonah": return "primary";
+          case "michael": return "secondary";
+          case "justin": return "info";
+        }
+      })()} onClick={() => {props.changeCurrentCourse(course[1].id)}}>
                   <FormatAlignLeft className={classes.icons} /> Explore Course
                 </Button>
               </Link>
             </CardBody>
           </Card>
         </GridItem>
-        <GridItem xs={12} sm={6} md={6}>
-          <Card
-            raised
-            background
-            style={{ backgroundImage: "url(" + office2 + ")" }}
-          >
-            <CardBody background>
-              <h6 className={classes.category}>Jonah Poulson</h6>
-              <div>
-                  <img src={jonah} alt="..." className="teacher-img"/>
-                </div>
-              <a href="#pablo">
-                <h3 className={classes.cardTitle}>
-                  Language Learning Techniques
-                </h3>
-              </a>
-              <Link to="/course">
-                <Button round href="#pablo" color="primary" onClick={() => {props.changeCurrentCourse(2)}}>
-                  <FormatAlignLeft className={classes.icons} /> Explore Course
-                </Button>
-              </Link>
-            </CardBody>
-          </Card>
-        </GridItem>
-        <GridItem xs={12} sm={6} md={6}>
-          <Card
-            raised
-            background
-            style={{ backgroundImage: "url(" + blog8 + ")" }}
-          >
-            <CardBody background>
-              <h6 className={classes.category}>Michael Kriegshauser</h6>
-              <div>
-                  <img src={michael} alt="..." className="teacher-img"/>
-                </div>
-              <a href="#pablo">
-                <h3 className={classes.cardTitle}>
-                  Build an effective learning schedule
-                </h3>
-              </a>
-              <Link to="/course">
-                <Button round href="#pablo" color="secondary" onClick={() => {props.changeCurrentCourse(3)}}>
-                  <FormatAlignLeft className={classes.icons} /> Explore Course
-                </Button>
-              </Link>
-            </CardBody>
-          </Card>
-        </GridItem>
-        <GridItem xs={12} sm={6} md={6}>
-          <Card
-            raised
-            background
-            style={{ backgroundImage: "url(" + office4 + ")" }}
-          >
-            <CardBody background>
-              <h6 className={classes.category}>Justin Schofield</h6>
-              <div>
-                  <img src={justin} alt="..." className="teacher-img"/>
-                </div>
-              <a href="#pablo">
-                <h3 className={classes.cardTitle}>
-                  Use Anki flash cards for learning
-                </h3>
-              </a>
-              <Link to="/course">
-                <Button round href="#pablo" color="info" onClick={() => {props.changeCurrentCourse(4)}}>
-                  <FormatAlignLeft className={classes.icons} /> Explore Course
-                </Button>
-              </Link>
-            </CardBody>
-          </Card>
-        </GridItem>
+        ))
+      }
+
+  {/* End courses map function */}
         
+
       </GridContainer>
     </div>
   );

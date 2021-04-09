@@ -56,7 +56,7 @@ export default function BlogPostPage(props) {
           case 1:   return abigail;
           case 2: return jonah;
           case 3:  return michael;
-          case 4:      return justin;
+          case 4:  return justin;
         }
       })()
             } className="teacher-img"></img>

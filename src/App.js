@@ -30,7 +30,8 @@ var hist = createBrowserHistory();
 class App extends Component {
 
     state = {
-        currentCourse: courseData.course1
+        currentCourse: courseData.course1,
+        courses: Object.entries(courseData)
     }
 
     changeCurrentCourse = (courseNum) => {
@@ -59,7 +60,7 @@ class App extends Component {
             <Switch>
             <Route path="/about-us" component={AboutUsPage} />
             <Route path="/course" render={()=> <BlogPostPage courseData={this.state.currentCourse} />} />
-            <Route path="/courses" render={()=> <BlogPostsPage changeCurrentCourse={this.changeCurrentCourse} />} />
+            <Route path="/courses" render={()=> <BlogPostsPage changeCurrentCourse={this.changeCurrentCourse} courses={this.state.courses} />} />
             <Route path="/components" component={ComponentsPage} />
             <Route path="/contact-us" component={ContactUsPage} />
             <Route path="/ecommerce-page" component={EcommercePage} />
