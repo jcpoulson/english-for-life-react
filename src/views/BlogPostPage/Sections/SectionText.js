@@ -58,6 +58,11 @@ export default function SectionText(props) {
               <LabelImportantIcon /> Learn More
             </Button>
         </Link>
+        <Link to="/us-citizenship">
+        <Button color={window.innerWidth < 960 ? "primary" : "primary"}>
+              <LabelImportantIcon /> Explore Course Content
+            </Button>
+        </Link>
           </GridContainer>
           
         </GridItem>

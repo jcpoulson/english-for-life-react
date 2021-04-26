@@ -8,6 +8,7 @@ const courseData = {
         subtitle: "Learn what is needed to obtain a United States Citizenship",
         desc: "If obtaining a United States Citizenship sounds like a lot, well that's because it is, but don't worry we will be with you every step of the way",
         content: "https://www.youtube.com/embed/iJmMYKawW1A",
+        actualCourseContent: "bro",
         requirements: "This course does require a basic understanding and proficiency of the English language. Other than that all this course requires is the drive to pursue a United States Citizenship"
     },
     course2: {
