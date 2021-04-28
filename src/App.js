@@ -58,22 +58,22 @@ class App extends Component {
         return (
         <Router history={hist}>
             <Switch>
-            <Route path="/about-us" component={AboutUsPage} />
-            <Route path="/course" render={()=> <BlogPostPage courseData={this.state.currentCourse} />} />
-            <Route path="/courses" render={()=> <BlogPostsPage changeCurrentCourse={this.changeCurrentCourse} courses={this.state.courses} />} />
+            <Route path="/about-us" component={AboutUsPage} /> {/* About us page */}
+            <Route path="/course" render={()=> <BlogPostPage courseData={this.state.currentCourse} />} /> {/* Specific Course Page*/}
+            <Route path="/courses" render={()=> <BlogPostsPage changeCurrentCourse={this.changeCurrentCourse} courses={this.state.courses} />} /> {/* Course Catalog Page */}
             <Route path="/components" component={ComponentsPage} />
             <Route path="/contact-us" component={ContactUsPage} />
             <Route path="/ecommerce-page" component={EcommercePage} />
             <Route path="/landing-page" component={LandingPage} />
             <Route path="/login-page" component={LoginPage} /> {/* This is the login page*/}
             <Route path="/pricing" component={PricingPage} /> 
-            <Route path="/profile-page" component={ProfilePage} />
+            <Route path="/profile-page" component={ProfilePage} /> {/* User Profile Page */}
             <Route path="/product-page" component={ProductPage} />
             <Route path="/us-citizenship" component={SectionsPage} /> {/* This is the course page for us citizenship*/}
             <Route path="/shopping-cart-page" component={ShoppingCartPage} />
-            <Route path="/signup-page" component={SignupPage} />
+            <Route path="/signup-page" component={SignupPage} /> {/* Signup page */}
             <Route path="/error-page" component={ErrorPage} />
-            <Route path="/" component={LoginPage} />
+            <Route path="/" component={LoginPage} /> {/* Root route and/or login page*/}
             </Switch>
         </Router>
         )
