@@ -5,4 +5,4 @@ So to start off not really much goes on in this file, really all that goes on is
 ## Please proceed to /src/App.js
 
 So you're screen should look like this
-![App.js](../img/App.png)
+![App.js](img/App.png)
