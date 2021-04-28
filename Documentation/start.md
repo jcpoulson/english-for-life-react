@@ -4,12 +4,12 @@ You may have already read in the README that this project runs on the JavaScript
 
 You don't need to be a React master to start working on this project but I do recommend that you be comfortable with these features of React
 
--React Components (Class and function Components)
--JSX
--Props
--State
--React Router
--You do not need to know about React hooks but I highly recommend it as the main component library this project uses, relies heavily on React hooks
+- React Components (Class and function Components)
+- JSX
+- Props
+- State
+- React Router
+- You do not need to know about React hooks but I highly recommend it as the main component library this project uses, relies heavily on React hooks
 
 Another thing which is not part of React that you will need to know is how to use communicate with an API, I recommend Axios, however you may use what you like
 
