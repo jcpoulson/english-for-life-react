@@ -52,7 +52,7 @@ you can communicate with your API using whatever method you would use but we per
     changeData = async (searchTerm) => {
         const data = await axios.get("https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${searchTerm}&per_page=24&format=json&nojsoncallback=1");
         this.setState({
-        currentCourse: data.course1,
-        courses: data
+            currentCourse: data.course1,
+            courses: data
         })
     }
