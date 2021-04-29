@@ -1,37 +1,13 @@
 ## Welcome to the final documentation piece for the front-end
 
-So as mentioned in the last file, you may have come across this code
+So as mentioned in the last file, you may have come across these lines of code
 
 `
 import courseData from "./courseData"
 
-var hist = createBrowserHistory();
-
-class App extends Component {
-
     state = {
         currentCourse: courseData.course1,
         courses: Object.entries(courseData)
-    }
-
-    changeCurrentCourse = (courseNum) => {
-        if (courseNum === 1) {
-            this.setState({
-                currentCourse: courseData.course1
-            })
-        } else if (courseNum === 2) {
-            this.setState({
-                currentCourse: courseData.course2
-            })
-        } else if (courseNum === 3) {
-            this.setState({
-                currentCourse: courseData.course3
-            })
-        } else if (courseNum === 4) {
-            this.setState({
-                currentCourse: courseData.course4
-            })
-        }
     }
 `
 
@@ -51,7 +27,7 @@ Now you may have noticed that this app pulls data from /src/courseData.js and we
 you can communicate with your API using whatever method you would use but we personally recommend axios. A call to an external API using axios would look like this 
 
 `changeData = async (searchTerm) => {
-    const data = await axios.get(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${searchTerm}&per_page=24&format=json&nojsoncallback=1`);
+    const data = await axios.get("https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${searchTerm}&per_page=24&format=json&nojsoncallback=1");
     this.setState({
       currentCourse: data.course1,
       courses: data
