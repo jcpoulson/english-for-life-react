@@ -28,8 +28,9 @@ From there it will be up to you to configure these components to the way that yo
 
 Another thing about these routes, you may notice these two routes
 
-`<Route path="/course" render={()=> <BlogPostPage courseData={this.state.currentCourse} />} /> {/* Specific Course Page*/}
-<Route path="/courses" render={()=> <BlogPostsPage changeCurrentCourse={this.changeCurrentCourse} courses={this.state.courses} />} /> {/* Course Catalog Page */}`
+    <Route path="/course" render={()=> <BlogPostPage courseData={this.state.currentCourse} />} /> {/* Specific Course Page*/}
+
+    <Route path="/courses" render={()=> <BlogPostsPage changeCurrentCourse={this.changeCurrentCourse} courses={this.state.courses} />} /> {/* Course Catalog Page */}
 
 these two routes are dynamic or at least the course one is but they both have data passed data passed down to the component through props and this data lives within the App state, This is where being comfortable with React props and state is very important
 
