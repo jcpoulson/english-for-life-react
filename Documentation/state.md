@@ -2,16 +2,16 @@
 
 So as mentioned in the last file, you may have come across this code
 
-`import courseData from "./courseData"`
+    import courseData from "./courseData"
 
-`var hist = createBrowserHistory();`
+    var hist = createBrowserHistory();
 
-`class App extends Component {`
+    class App extends Component {
 
-    `state = {
+    state = {
         currentCourse: courseData.course1,
         courses: Object.entries(courseData)
-    }`
+    }
 
     `changeCurrentCourse = (courseNum) => {
         if (courseNum === 1) {
@@ -31,7 +31,7 @@ So as mentioned in the last file, you may have come across this code
                 currentCourse: courseData.course4
             })
         }
-    }`
+    }
 
 
 now this code primarily works with React state and that in my opinion is one of the most powerful features of React, so again I highly recommend that you be comfortable with state. 
@@ -49,10 +49,10 @@ Now you may have noticed that this app pulls data from /src/courseData.js and we
 
 you can communicate with your API using whatever method you would use but we personally recommend axios. A call to an external API using axios would look like this 
 
-`changeData = async (searchTerm) => {
-    const data = await axios.get("https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${searchTerm}&per_page=24&format=json&nojsoncallback=1");
-    this.setState({
-      currentCourse: data.course1,
-      courses: data
-    })
-  }`
+    changeData = async (searchTerm) => {
+        const data = await axios.get("https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${searchTerm}&per_page=24&format=json&nojsoncallback=1");
+        this.setState({
+        currentCourse: data.course1,
+        courses: data
+        })
+    }
