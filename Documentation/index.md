@@ -36,37 +36,37 @@ these two routes are dynamic or at least the course one is but they both have da
 
 I will mention one last thing that is very important here, You may have noticed the courseData import, the state object and the changeCurrentCourse method that look like this
 
-`
-import courseData from "./courseData"
 
-var hist = createBrowserHistory();
+    import courseData from "./courseData"
 
-class App extends Component {
+    var hist = createBrowserHistory();
 
-    state = {
-        currentCourse: courseData.course1,
-        courses: Object.entries(courseData)
-    }
+    class App extends Component {
 
-    changeCurrentCourse = (courseNum) => {
-        if (courseNum === 1) {
-            this.setState({
-                currentCourse: courseData.course1
-            })
-        } else if (courseNum === 2) {
-            this.setState({
-                currentCourse: courseData.course2
-            })
-        } else if (courseNum === 3) {
-            this.setState({
-                currentCourse: courseData.course3
-            })
-        } else if (courseNum === 4) {
-            this.setState({
-                currentCourse: courseData.course4
-            })
+        state = {
+            currentCourse: courseData.course1,
+            courses: Object.entries(courseData)
         }
-    }
-`
+
+        changeCurrentCourse = (courseNum) => {
+            if (courseNum === 1) {
+                this.setState({
+                    currentCourse: courseData.course1
+                })
+            } else if (courseNum === 2) {
+                this.setState({
+                    currentCourse: courseData.course2
+                })
+            } else if (courseNum === 3) {
+                this.setState({
+                    currentCourse: courseData.course3
+                })
+            } else if (courseNum === 4) {
+                this.setState({
+                    currentCourse: courseData.course4
+                })
+            }
+        }
+
 
 ## Please proceed to /Documentaion/state.md to learn more about this
