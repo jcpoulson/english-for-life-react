@@ -1,15 +1,38 @@
 ## Welcome to the final documentation piece for the front-end
 
-So as mentioned in the last file, you may have come across these lines of code
+So as mentioned in the last file, you may have come across this code
 
-`
-import courseData from "./courseData"
+`import courseData from "./courseData"`
 
-    state = {
+`var hist = createBrowserHistory();`
+
+`class App extends Component {`
+
+    `state = {
         currentCourse: courseData.course1,
         courses: Object.entries(courseData)
-    }
-`
+    }`
+
+    `changeCurrentCourse = (courseNum) => {
+        if (courseNum === 1) {
+            this.setState({
+                currentCourse: courseData.course1
+            })
+        } else if (courseNum === 2) {
+            this.setState({
+                currentCourse: courseData.course2
+            })
+        } else if (courseNum === 3) {
+            this.setState({
+                currentCourse: courseData.course3
+            })
+        } else if (courseNum === 4) {
+            this.setState({
+                currentCourse: courseData.course4
+            })
+        }
+    }`
+
 
 now this code primarily works with React state and that in my opinion is one of the most powerful features of React, so again I highly recommend that you be comfortable with state. 
 
